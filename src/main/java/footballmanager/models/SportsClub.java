@@ -10,6 +10,10 @@ public class SportsClub implements Serializable {
 
     }
 
+    public SportsClub(String nameOfTheClub) {
+        this.nameOfTheClub = nameOfTheClub;
+    }
+
     public SportsClub(String nameOfTheClub, String location) {
         this.nameOfTheClub = nameOfTheClub;
         this.location = location;

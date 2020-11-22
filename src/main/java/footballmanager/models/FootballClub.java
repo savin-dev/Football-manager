@@ -13,19 +13,16 @@ public class FootballClub extends SportsClub {
     private int theNumberOfMachesPlayed;
     private String captianName;
     private String coachName;
+    private int memberCount;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof FootballClub)) return false;
         FootballClub that = (FootballClub) o;
-        return getWinCount() == that.getWinCount() &&
-                getDrawsCount() == that.getDrawsCount() &&
-                getDefeatsCount() == that.getDefeatsCount() &&
-                getNumberOfGoalsReceived() == that.getNumberOfGoalsReceived() &&
-                getGetNumberOfGoalsScored() == that.getGetNumberOfGoalsScored() &&
-                getTheNumberOfPoints() == that.getTheNumberOfPoints() &&
-                getTheNumberOfMachesPlayed() == that.getTheNumberOfMachesPlayed();
+        return super.equals(that) &&
+                captianName.equals(that.captianName) &&
+                coachName.equals(that.coachName);
     }
 
 
@@ -33,17 +30,11 @@ public class FootballClub extends SportsClub {
 
     }
 
-    public FootballClub(String nameOfTheClub, String location, int winCount, int drawsCount, int defeatsCount, int numberOfGoalsReceived, int getNumberOfGoalsScored, int theNumberOfPoints, int theNumberOfMachesPlayed, String captianName, String coachName) {
-        super(nameOfTheClub, location);
-        this.winCount = winCount;
-        this.drawsCount = drawsCount;
-        this.defeatsCount = defeatsCount;
-        this.numberOfGoalsReceived = numberOfGoalsReceived;
-        this.getNumberOfGoalsScored = getNumberOfGoalsScored;
-        this.theNumberOfPoints = theNumberOfPoints;
-        this.theNumberOfMachesPlayed = theNumberOfMachesPlayed;
+    public FootballClub(String nameOfTheClub, String captianName, String coachName, int memberCount) {
+        super(nameOfTheClub);
         this.captianName = captianName;
         this.coachName = coachName;
+        this.memberCount = memberCount;
     }
 
     public int getWinCount() {
@@ -122,4 +113,5 @@ public class FootballClub extends SportsClub {
     public int hashCode() {
         return Objects.hash(getWinCount(), getDrawsCount(), getDefeatsCount(), getNumberOfGoalsReceived(), getGetNumberOfGoalsScored(), getTheNumberOfPoints(), getTheNumberOfMachesPlayed(), getCaptianName(), getCoachName());
     }
+
 }
