@@ -114,4 +114,17 @@ public class FootballClub extends SportsClub {
         return Objects.hash(getWinCount(), getDrawsCount(), getDefeatsCount(), getNumberOfGoalsReceived(), getGetNumberOfGoalsScored(), getTheNumberOfPoints(), getTheNumberOfMachesPlayed(), getCaptianName(), getCoachName());
     }
 
+    @Override
+    public String toString() {
+        String team=getNameOfTheClub()+"\n"+
+                "Team Captain\t\t: " + captianName + '\n' +
+                "No.of Members\t\t: " + memberCount + '\n' +
+                "MachesPlayed\t\t: " + theNumberOfMachesPlayed + '\n' +
+                "Matches Won\t\t\t: " + winCount + '\n' +
+                "Matches Lost\t\t: " + defeatsCount + '\n' +
+                "Goals Scored\t\t: " + defeatsCount + '\n' +
+                "League Points\t\t: " + theNumberOfPoints + '\n';
+
+        return team;
+    }
 }

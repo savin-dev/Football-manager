@@ -27,13 +27,13 @@ public class PremierLeagueManager implements LeagueManager{
         teams.remove(index);
     }
 
-    public FootballClub getStatics(String clubName) {
-        int index=findTeamFromList(clubName);
-        if (index >= 0){
-            teams.get(index).getCaptianName();
+        public FootballClub getStatics(String clubName) {
+            int index=findTeamFromList(clubName);
+            if (index >= 0){
+                return teams.get(index);
+            }
+            return null;
         }
-        return null;
-    }
 
     public List<FootballClub> getLeagueTable(){
         Collections.sort(teams, (s1, s2) -> s2.getTheNumberOfPoints() - s1.getTheNumberOfPoints());
