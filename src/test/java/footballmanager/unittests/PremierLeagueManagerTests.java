@@ -3,11 +3,9 @@ package footballmanager.unittests;
 import footballmanager.controller.LeagueManager;
 import footballmanager.controller.impl.PremierLeagueManager;
 import footballmanager.models.FootballClub;
-import footballmanager.models.SportsClub;
-
 import java.util.List;
 
-public class PremierLeagueManagerTests {
+public class PremierLeagueManagerTests{
     private static LeagueManager leagueManager;
 
     private static void createTeamTest() throws Exception {
@@ -27,6 +25,13 @@ public class PremierLeagueManagerTests {
 
     private static void showIndividualTeamStatistic(){
         leagueManager.getStatics("TFC");
+        System.out.println("Individual statics showing successfully.");
+    }
+
+    public static void showPlayedMatch() {
+        leagueManager.playedMatch("BBC","DMC",12,10); // ithin bn DNC kiyala team ekak nane
+         System.out.println("Played mach successfully."); // Ah hari godane ehenm. awlak na ela heta ehenm oya tika karala kypn
+        // hari ayye thanx
     }
 
     private static void showLeagueTable(){
@@ -39,6 +44,8 @@ public class PremierLeagueManagerTests {
     }
 
     public static void main(String[] args) throws Exception {
+        //File f1 = new File("teams");
+        //FileInputStream fout = new FileInputStream(f1);
         leagueManager=new PremierLeagueManager();
         System.out.println("1. Creating New Clubs");
         createTeamTest();
@@ -48,6 +55,10 @@ public class PremierLeagueManagerTests {
         deleteTeamTest();
         System.out.println("4. Verifying deletion (Prints the current league table");
         showLeagueTable();
-//        showIndividualTeamStatistic();
+        System.out.println("5. Show the individual statics.");
+        showIndividualTeamStatistic();
+        System.out.println("6. Show played match :");
+        showPlayedMatch(); // comand line eke. run karal penwanna
+        
     }
 }
