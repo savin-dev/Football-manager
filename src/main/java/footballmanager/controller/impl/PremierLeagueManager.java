@@ -20,7 +20,7 @@ public class PremierLeagueManager implements LeagueManager {
             objectInputStream.close();
             fileInputStream.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            saveToFile();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

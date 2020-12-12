@@ -7,9 +7,8 @@ import java.util.Scanner;
 
 public class ViewStatistics extends AbstractCLI{
 
-    LeagueManager manager;
     public ViewStatistics(LeagueManager manager) throws Exception{
-        super(true);
+        super(false);
         this.manager=manager;
     }
 

@@ -8,10 +8,14 @@ import java.util.Scanner;
 // 1->4 wenakn karanna. Awulak awoth ahapn.ok ayye playedMatch() eke error enawa run wenakota
 public class MainMenu extends AbstractCLI {
 
-    LeagueManager manager;
     public MainMenu() throws Exception{
         super(true);
         manager=new PremierLeagueManager();
+    }
+
+    public MainMenu(LeagueManager manager) throws Exception{
+        super(true);
+        this.manager=manager;
     }
 
     public void draw(){
@@ -38,6 +42,7 @@ public class MainMenu extends AbstractCLI {
         try {
             goToOption(option);
         } catch (Exception e) {
+            e.printStackTrace();
             //methana exceptions handle karanna
             //ekko print karala dala nikan inna
             //nathnm hariyata condtions walin balala handle karanna

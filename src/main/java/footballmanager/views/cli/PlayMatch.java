@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class PlayMatch extends AbstractCLI{
 
-    LeagueManager manager;
     public PlayMatch(LeagueManager manager) throws Exception{
         super(false);
         this.manager=manager;

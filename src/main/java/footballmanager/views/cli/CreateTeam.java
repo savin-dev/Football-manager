@@ -11,7 +11,7 @@ import java.util.Scanner;
 // Eeta passe constructor eka me wagema hadanna
 // CreateTeam wagema thawa oni wenawa ne ViewStatistics, PlayMatch wage classesuth
 public class CreateTeam extends AbstractCLI {
-    LeagueManager manager;
+
     public CreateTeam(LeagueManager manager) throws Exception{
         super(true);
         this.manager=manager;
@@ -26,6 +26,8 @@ public class CreateTeam extends AbstractCLI {
         String clubName=scanner.nextLine().trim();
         System.out.print("Insert number of members : ");
         int numberOfMembers = scanner.nextInt();
+        scanner.nextLine();
+        // int scanner eken gannakota awulak thiyei podi. ehinda ekata passe scanner eka aye netline karanna oni
         System.out.print("Insert coach name        : ");
         String coachName = scanner.nextLine().trim();
         System.out.print("Insert captain name      : ");

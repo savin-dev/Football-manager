@@ -5,7 +5,6 @@ import footballmanager.controller.LeagueManager;
 import java.util.Scanner;
 
 public class DeleteClub extends AbstractCLI{
-    LeagueManager manager;
 
     public DeleteClub(LeagueManager manager) throws Exception{
         super(true);
